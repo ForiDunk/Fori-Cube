@@ -25,7 +25,7 @@
     <div>
         <form class="form" name="contactForm" ng-submit="handleSubmit()">
           <input type="text" class="form-control mb-2 mr-sm-2" ng-model="contact" required placeholder="contact name...">
-          <input type="text" class="form-control mb-2 mr-sm-2" ng-model="number" required placeholder="phone number...">   
+          <input type="tel" pattern='[0-9]{10}' class="form-control mb-2 mr-sm-2" ng-model="number" required placeholder="phone number...">   
           <button type="submit" class="btn btn-outline-success mb-2">Submit</button>
           <button type="button" class="btn btn-outline-danger mb-2" ng-click="changeClass()">Back</button>
         </form>
