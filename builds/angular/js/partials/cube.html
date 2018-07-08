@@ -1,0 +1,34 @@
+<div id="wrapper">
+  <div ng-class="class" class="cube">
+    <!--Front-->
+    <div></div>
+    <!--Back-->
+    <div></div>
+    <!--Left-->
+    <div>
+      <br />
+      <input type="search" placeholder="Search Contact..." ng-model="query">
+      <br />
+      <button class="btn btn-outline-dark btn-sm" ng-click="changeClass()" ng-if="!query">Add Contact</button>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item list-group-item-warning" ng-repeat="item in $storage.contacts | filter: query | orderBy: 'contact'">
+            <p>{{item.contact}} - {{item.number}} <button class="btn btn-danger btn-sm" ng-click="handleDelete(item)">Remove</button></p>
+            <!-- <button class="btn btn-danger btn-sm" ng-click="handleDelete(item)">X</button> -->
+        </li>
+      </ul>
+    </div>
+    <!--Right-->
+    <div></div>
+    <!--Top-->
+    <div></div>
+    <!--Bottom-->
+    <div>
+        <form class="form" name="contactForm" ng-submit="handleSubmit()">
+          <input type="text" class="form-control mb-2 mr-sm-2" ng-model="contact" required placeholder="contact name...">
+          <input type="text" class="form-control mb-2 mr-sm-2" ng-model="number" required placeholder="phone number...">   
+          <button type="submit" class="btn btn-outline-success mb-2">Submit</button>
+          <button type="button" class="btn btn-outline-danger mb-2" ng-click="changeClass()">Back</button>
+        </form>
+    </div>
+  </div>
+</div>
